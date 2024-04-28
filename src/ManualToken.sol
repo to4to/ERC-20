@@ -14,6 +14,11 @@ contract ManualToken {
 
 
     function totalSupply() public view returns (uint256) {
-        return 1000000;
+        return 100 ether;
+    }
+
+
+    function decimals() public pure returns (uint8) {
+        return 18;
     }
 }
