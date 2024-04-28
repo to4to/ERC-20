@@ -6,7 +6,7 @@ pragma solidity 0.8.22;
 contract ManualToken {
     
 
-
+mapping (address => uint) private s_balances;
 
     function name() public view returns (string memory) {
         return "Manual Token";
@@ -20,5 +20,9 @@ contract ManualToken {
 
     function decimals() public pure returns (uint8) {
         return 18;
+    }
+
+    function balanceOf(address _owner) public view returns (uint256) {
+        return s_balances[_owner];
     }
 }
