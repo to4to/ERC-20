@@ -2,13 +2,15 @@
 pragma solidity ^0.8.20;
 import {Test} from "forge-std/Test.sol";
 import {DeployOurToken} from "../script/DeployOurToken.s.sol"; 
-
+import {OurToken} from "../src/OurToken.sol";
 contract OurTokenTest is Test{
+OurToken public ourToken;
+DeployOurToken public deployer;
 
-
-    function setUp() public override {
-        // deploy contract
-        new OurToken(100 ether);
+    function setUp() public {
+deployer = new DeployOurToken();
+        
+        ourToken = deployer.run();
     }
 
 }
