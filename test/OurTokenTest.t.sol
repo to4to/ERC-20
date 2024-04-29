@@ -10,6 +10,7 @@ contract OurTokenTest is Test {
 
 
 address bob=makeAddr("bob");
+address alice=makeAddr("alice");
 
     function setUp() public {
         deployer = new DeployOurToken();
