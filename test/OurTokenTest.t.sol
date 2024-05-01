@@ -35,6 +35,9 @@ contract OurTokenTest is Test {
         vm.prank(alice);
         ourToken.transferFrom(bob, alice, transferAmount);
 
-        ourToken.transfer(bob, transferAmount);
+      //  ourToken.transfer(bob, transferAmount);
+
+      assertEq(transferAmount, ourToken.balanceOf(alice));
+      assertEq(INITIAL_SUPPLY - transferAmount, ourToken.balanceOf(bob));
     }
 }
